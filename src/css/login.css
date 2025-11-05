@@ -1,0 +1,255 @@
+/* removed login page image */
+.boxes { display: none; }
+
+@media only screen and (min-width: 1300px) {
+    .boxes {
+        width: 180px;
+        top: 3%;
+    }
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 768px) {
+    .boxes {
+        width: 150px;
+        top: 4%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .boxes {
+        width: 100px;
+        top: 2%;
+    }
+}
+
+.box {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background: #ffffff;
+    backdrop-filter: blur(0);
+    border-radius: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 120px;
+}
+
+.box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+@media only screen and (min-width: 800px) {
+    .box {
+        width: 480px;
+        padding: 3rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .box {
+        width: 95%;
+        padding: 2rem 1.5rem;
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .box {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+        margin-top: 80px;
+    }
+}
+
+.errmsg {
+    text-align: center;
+}
+
+.head {
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 1400px) {
+    .head {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .head {
+        font-size: 1.75rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .head {
+        font-size: 1.5rem;
+    }
+}
+
+.head::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    height: 3px;
+    width: 60px;
+    background: #000000;
+    border-radius: 2px;
+}
+
+.g0 {
+    padding: 1rem 0;
+}
+
+.g1 {
+    padding: 0.5rem 0;
+}
+
+.g2 {
+    padding: 0;
+}
+
+.g3 {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.g3 label {
+    font-weight: 600;
+    color: #000000;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.g3 input {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    border: 2px solid #9ca3af;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    background: #ffffff;
+    color: #000000;
+}
+
+.g3 input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    outline: none;
+    background: #ffffff;
+}
+
+.g4 {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.g4 label {
+    font-weight: 600;
+    color: #000000;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.g4 input {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    border: 2px solid #9ca3af;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    background: #ffffff;
+    color: #000000;
+}
+
+.g4 input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    outline: none;
+    background: #ffffff;
+}
+
+.g5 {
+    padding: 1.5rem 0 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.g5 button {
+    width: 100%;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    background: #000000;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.g5 button:hover {
+    transform: translateY(-1px);
+    background: #111111;
+}
+
+.g5 button:active {
+    transform: translateY(0);
+}
+
+.g6 {
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.g7 {
+    padding: 1.5rem 0 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.g7 p {
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+.sup {
+    color: #000000;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.sup:hover {
+    color: #000000;
+}
+
+@media only screen and (max-width: 524px) {
+    #username,
+    #password {
+        width: 100%;
+    }
+}
+
+
+
+
+

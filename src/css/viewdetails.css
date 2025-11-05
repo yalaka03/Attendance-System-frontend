@@ -1,0 +1,74 @@
+.gred0 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gred1 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Modern table styling */
+.MuiTable-root {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.MuiTableHead-root {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.MuiTableHead-root .MuiTableCell-root {
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 1rem;
+}
+
+.MuiTableBody-root .MuiTableRow-root {
+    transition: background-color 0.2s ease;
+}
+
+.MuiTableBody-root .MuiTableRow-root:hover {
+    background-color: rgba(102, 126, 234, 0.05);
+}
+
+.MuiTableBody-root .MuiTableCell-root {
+    padding: 1rem;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+.MuiIconButton-root {
+    color: #667eea;
+    transition: all 0.3s ease;
+}
+
+.MuiIconButton-root:hover {
+    background-color: rgba(102, 126, 234, 0.1);
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 768px) {
+    .gred0 {
+        padding: 1rem;
+    }
+
+    .MuiTableHead-root .MuiTableCell-root,
+    .MuiTableBody-root .MuiTableCell-root {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
