@@ -239,3 +239,62 @@ li {
     cursor: pointer;
     accent-color: #667eea;
 }
+
+/* Wrapper for 2-column layout */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Left panel with demo info */
+.login-info-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.info-content {
+  max-width: 400px;
+}
+
+.info-content h2 {
+  margin-bottom: 1rem;
+}
+
+.info-content ul {
+  margin-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.info-content .hint {
+  margin-top: 1rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Right panel (your existing box) */
+.login-form-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* On small screens, stack vertically */
+@media (max-width: 900px) {
+  .login-wrapper {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .login-info-panel {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+

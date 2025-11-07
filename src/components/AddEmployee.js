@@ -8,35 +8,6 @@ import imageToBase64 from 'image-to-base64/browser';
 import "../css/addemployee.css";
 import { StylesProvider } from "@material-ui/core/styles";
 
-// Helper function to create thumbnail from base64 image
-const createThumbnail = (imageSrc, maxSize = 150) => {
-    return new Promise((resolve) => {
-        const img = new Image();
-        img.onload = () => {
-            const canvas = document.createElement('canvas');
-            let width = img.width;
-            let height = img.height;
-            if (width > height) {
-                if (width > maxSize) {
-                    height = (height * maxSize) / width;
-                    width = maxSize;
-                }
-            } else {
-                if (height > maxSize) {
-                    width = (width * maxSize) / height;
-                    height = maxSize;
-                }
-            }
-            canvas.width = width;
-            canvas.height = height;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0, width, height);
-            resolve(canvas.toDataURL('image/png'));
-        };
-        img.onerror = () => resolve(imageSrc); // fallback to original
-        img.src = imageSrc;
-    });
-};
 
 const AddEmployee = () => {
     const axiosPrivate = useAxiosPrivate();
@@ -208,7 +179,6 @@ const AddEmployee = () => {
                 setVal('dob', full.e_dob ? new Date(full.e_dob).toISOString().slice(0,10) : '');
                 setVal('designation', full.e_designation || '');
                 setVal('username', full.e_username || '');
-                // Load face lazily with progressive loading (thumbnail first, then full)
                 const cacheKey = `employee-face-${emp.e_id}`;
                 const cachedFace = localStorage.getItem(cacheKey);
                 if (cachedFace) {
@@ -218,19 +188,6 @@ const AddEmployee = () => {
                     window.dispatchEvent(new CustomEvent('imageLoadComplete', { detail: { e_id: emp.e_id } }));
                 } else {
                     setImageLoading(true);
-                    // Load thumbnail first
-                    try {
-                        const thumbRes = await axiosPrivate.get(`/employees/face?e_id=${encodeURIComponent(emp.e_id)}&thumbnail=true`);
-                        const thumbData = thumbRes?.data?.e_face || '';
-                        if (thumbData) {
-                            // Create thumbnail on client side (resize to 150x150)
-                            const thumbImg = await createThumbnail(`data:image/png;base64,${thumbData}`, 150);
-                            setImg(thumbImg);
-                            setExistingFace(thumbData);
-                            // Emit loadComplete after thumbnail loads
-                            window.dispatchEvent(new CustomEvent('imageLoadComplete', { detail: { e_id: emp.e_id } }));
-                            
-                            // Now load full resolution (keep loading indicator visible)
                             try {
                                 const faceRes = await axiosPrivate.get(`/employees/face?e_id=${encodeURIComponent(emp.e_id)}`);
                                 const fullFace = faceRes?.data?.e_face || '';
@@ -240,10 +197,8 @@ const AddEmployee = () => {
                                     setImg(`data:image/png;base64,${fullFace}`);
                                 }
                             } catch {}
+                            finally { setImageLoading(false); }
                         }
-                    } catch {}
-                    finally { setImageLoading(false); }
-                }
             } catch (e) {
                 // ignore
             }

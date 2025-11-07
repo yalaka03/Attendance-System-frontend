@@ -84,24 +84,53 @@ const Login = () => {
 
     return (
         <StylesProvider injectFirst>
-            {/* <section> */}
-            <Grid container justifyContent={"center"}>
+            <Grid container className="login-wrapper" justifyContent="center" alignItems="center">
+    {/* LEFT PANEL: demo info */}
+    <Grid item xs={12} sm={5} md={5} lg={5} xl={5} className="login-info-panel">
+        <Box className="info-content">
+            <h2>Demo Login Info</h2>
+            <p>You can log in with any of these roles:</p>
+            <ul>
+                <li><b>Admin</b> – Can add companies <br/> An Admin can add Company, whose designated person can login to see their employees </li>
+                    <ul><li>Username: Admin , password : Admin</li></ul>
+                <li><b>Company</b> – Manage employees, add employees and see their attendance</li>
+                    <ul>
+                        <li>Username: mark.zukerberg@facebook.com, password : A@b123456</li>
+                        <li>Username: sundhar.pichai@google.com, password : A@b123456</li>
+                        <li>Username: tim.cook@apple.com, password : A@b123456</li>
+                </ul>
+                <li><b>Employee</b> – View personal dashboard</li>
+                <ul>
+                        <li>Username: mark.zukerberg@facebook.com, password : A@b123456</li>
+                        <li>Username: sundhar.pichai@google.com, password : A@b123456</li>
+                        <li>Username: tim.cook@apple.com, password : A@b123456</li>
+                </ul>
+            </ul>
+            <p>Everything is done by jwt security and routes, so unintended access gives unauthorized</p>
+        </Box>
+    </Grid>
+
+    {/* RIGHT PANEL: your existing login box */}
+    <Grid item xs={12} sm={7} md={7} lg={7} xl={7} className="login-form-panel">
+        <Grid container justifyContent={"center"}>
+            <Grid item>
                 <Box
                     className='box'
                     sx={{ border: 1, borderColor: 'black' }}
                 >
                     <Grid container>
-                        <Grid item className='g0' xs={12} sm={12} md={12} lg={12} xl={12} >
-                            <span className='errors'><p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p></span>
+                        <Grid item className='g0' xs={12}>
+                            <span className='errors'>
+                                <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+                            </span>
                         </Grid>
-                        <Grid item className='g1' xs={12} sm={12} md={12} lg={12} xl={12} >
+                        <Grid item className='g1' xs={12}>
                             <span className='head'>SignIn</span>
                         </Grid>
-                        {/* <h1>Sign In</h1> */}
-                        <Grid item className='g2' xs={12} sm={12} md={12} lg={12} xl={12}>
+                        <Grid item className='g2' xs={12}>
                             <Grid container>
                                 <form onSubmit={handleSubmit}>
-                                    <Grid item className='g3' xs={12} sm={12} md={12} lg={12} xl={12}>
+                                    <Grid item className='g3' xs={12}>
                                         <label htmlFor="username">Username:</label>
                                         <input
                                             type="text"
@@ -113,7 +142,7 @@ const Login = () => {
                                             required
                                         />
                                     </Grid>
-                                    <Grid item  className='g4' xs={12} sm={12} md={12} lg={12} xl={12}>
+                                    <Grid item className='g4' xs={12}>
                                         <label htmlFor="password">Password:</label>
                                         <input
                                             type="password"
@@ -123,26 +152,28 @@ const Login = () => {
                                             required
                                         />
                                     </Grid>
-                                    <Grid item className='g5' xs={12} sm={12} md={12} lg={12} xl={12}>
+                                    <Grid item className='g5' xs={12}>
                                         <button>Sign In</button>
-                                        {/* <Button className='sub' variant="contained">Sign In</Button> */}
                                     </Grid>
-                                    {/* Persist is forced to true; hide toggle */}
                                 </form>
                             </Grid>
                         </Grid>
-                        <Grid item className='g7' xs={12} sm={12} md={12} lg={12} xl={12}>
+                        <Grid item className='g7' xs={12}>
                             <p>
                                 Need an Account? &nbsp;
                                 <span className="line">
-                                    <Link to="/register"><span className="sup">  Sign Up</span></Link>
+                                    <Link to="/register"><span className="sup">Sign Up</span></Link>
                                 </span>
                             </p>
                         </Grid>
-                        {/* </section> */}
                     </Grid>
                 </Box>
             </Grid>
+        </Grid>
+    </Grid>
+</Grid>
+
+        
         </StylesProvider >
     )
 }

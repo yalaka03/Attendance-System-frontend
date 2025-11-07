@@ -78,7 +78,7 @@ const EmployeeList = () => {
     }, [checkedActive, checkedInactive])
 
     return (
-        <div style={{width:"95%", maxWidth: "1400px", margin: "0 auto", padding: "1rem"}}>
+        <div style={{width:"95%", maxWidth: "1400px", margin: "2rem auto", padding: "1rem"}}>
             <h1 style={{marginBottom:"1rem", fontSize: "1.5rem", fontWeight: 700, color: "#1e293b", flex: "0 0 auto"}}>Employee List</h1>
             <div style={{display: "flex", flexWrap: "wrap", gap: "1rem", alignItems: "center", marginBottom: "1.5rem"}}>
                 
