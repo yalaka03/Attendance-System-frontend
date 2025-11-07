@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'http://18.61.65.190:3500';
+const BASE_URL = 'https://demoer5htgmffg.bounceme.net';
 
 const axiosPublic = axios.create({
     baseURL: BASE_URL

@@ -50,5 +50,5 @@
     ]
   },
   "proxy": "http://localhost:3500",
-  "homepage": "Attendance-System-frontend"
+  "homepage": "/Attendance-System-frontend"
 }

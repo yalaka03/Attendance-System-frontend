@@ -10,7 +10,7 @@ ReactDOM.render(
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route path="/*" element={<App />} />
+          <Route path="/Attendance-System-frontend" element={<App />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
