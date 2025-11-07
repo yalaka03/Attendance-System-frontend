@@ -28,8 +28,8 @@ const Login = () => {
     const userRef = useRef();
     const errRef = useRef();
 
-    const [user, setUser] = useState('');
-    const [pwd, setPwd] = useState('');
+    const [user, setUser] = useState('mark.zukerberg@facebook.com');
+    const [pwd, setPwd] = useState('A@b123456');
     const [errMsg, setErrMsg] = useState('');
 
     useEffect(() => {

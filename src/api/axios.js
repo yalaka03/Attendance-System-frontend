@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'https://attendance-system-backend-vkyx.onrender.com';
+const BASE_URL = 'http://18.61.65.190:3500';
 
 const axiosPublic = axios.create({
     baseURL: BASE_URL
