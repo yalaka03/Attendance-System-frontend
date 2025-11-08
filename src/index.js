@@ -7,10 +7,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Attendance-System-frontend">
       <AuthProvider>
         <Routes>
-          <Route path="/Attendance-System-frontend" element={<App />} />
+          <Route path="/*" element={<App />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
